@@ -59,10 +59,9 @@ if len(listaDeCompras) > 3:
     totalFinal = totalFinal * 0.95
 totalDesconto = totalBruto - totalFinal
 
-print("--------------------------------------------------------")
-for item in listaDeCompras:
-    print(f"Valor da compra: R${item: .2f}")    
-
+# print("--------------------------------------------------------")
+# for item in listaDeCompras:
+#     print(f"Valor da compra: R${item: .2f}")    
 # print("--------------------------------------------------------")
 # print(f"Quantidade de compras realizadas: {len(listaDeCompras)}")
 # print(f"Total bruto: R$ {totalBruto: .2f}")
@@ -71,6 +70,10 @@ for item in listaDeCompras:
 # print("--------------------------------------------------------")
 
 with open("resume.txt", "w") as arquivo:
+    arquivo.write("--------------------------------------------------------\n")
+    for item in listaDeCompras:
+        arquivo.write(f"Valor da compra: R${item: .2f}\n") 
+
     arquivo.write("--------------------------------------------------------\n")
     arquivo.write(f"Quantidade de compras realizadas: {len(listaDeCompras)}\n")
     arquivo.write(f"Total bruto: R${totalBruto: .2f}\n")
